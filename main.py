@@ -1,15 +1,19 @@
 # main.py
-# Simple Python examples for GitHub language stats
-import math
+# Run full analysis for Food Delivery project
 
-def factorial(n):
-    if n <= 1:
-        return 1
-    return n * factorial(n-1)
+from analysis import analyze_data
 
-def greet(name):
-    return f"Hello, {name}!"
+def display_results(results):
+    print("📊 Food Delivery Analysis")
+    print("-" * 35)
+    print(f"Total Orders: {results['total_orders']}")
+    print(f"Average Delivery Time: {results['avg_delivery_time']} minutes")
+    print(f"Fastest Delivery: {results['fastest_delivery']} minutes")
+    print(f"Slowest Delivery: {results['slowest_delivery']} minutes")
+    print(f"Average Rating: {results['avg_rating']}")
+    print(f"Average Price: {results['avg_price']} EGP")
+    print("-" * 35)
 
 if _name_ == "_main_":
-    print(greet("Omnya"))
-    print("5! =", factorial(5))
+    results = analyze_data()
+    display_results(results)
